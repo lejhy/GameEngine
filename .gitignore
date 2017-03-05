@@ -1,3 +1,7 @@
+natives
+jars
+
+
 *.class
 
 # Mobile Tools for Java (J2ME)

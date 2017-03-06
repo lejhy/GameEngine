@@ -12,6 +12,7 @@ public class DisplayManager {
 	
 	private static final int WIDTH = 1920;
 	private static final int HEIGHT = 1080;
+	private static final int FPS = 60;
 	
 	public static void createDisplay() {
 		
@@ -22,6 +23,7 @@ public class DisplayManager {
 		try {
 			Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
 			Display.create(new PixelFormat(), attribs);
+			Display.setTitle("GameEngine");
 		} catch (LWJGLException e) {
 			e.printStackTrace();
 		}
@@ -30,7 +32,8 @@ public class DisplayManager {
 	}
 	
 	public static void updateDisplay() {
-		
+		Display.sync(FPS);
+		Display.update();
 	}
 	
 	public static void closeDisplay() {
